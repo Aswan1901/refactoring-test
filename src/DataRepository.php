@@ -29,24 +29,24 @@ class DataRepository
         return $customers;
     }
 
-    public function loadProducts(): array
-    {
-        $base = __DIR__;
-        $path = $base . '/../legacy/data/products.csv';
-        $rows = DataLoader::loadData($path);
-        $products = [];
-        foreach ($rows as $row) {
-            $products [$row['id']] = [
-                'id' => $row['id'],
-                'name' => $row['name'],
-                'category'=> $row['category'],
-                'weight' => $row['weight'],
-                'taxable' => $row['taxable'],
-            ];
-        }
-        return $products;
-    }
-
+//    public function loadProducts(): array
+//    {
+//        $base = __DIR__;
+//        $path = $base . '/../legacy/data/products.csv';
+//        $rows = DataLoader::loadData($path);
+//        $products = [];
+//        foreach ($rows as $row) {
+//            $products [$row['id']] = [
+//                'id' => $row['id'],
+//                'name' => $row['name'],
+//                'category'=> $row['category'],
+//                'weight' => $row['weight'],
+//                'taxable' => $row['taxable'],
+//            ];
+//        }
+//        return $products;
+//    }
+//
     public function loadOrders(): array
     {
         $base = __DIR__;
@@ -67,63 +67,63 @@ class DataRepository
         }
         return $orders;
     }
-
-    public function loadPromotions(): array
-    {
-        $base = __DIR__;
-        $path = $base . '/../legacy/data/promotions.csv';
-        $rows = DataLoader::loadData($path);
-        $promotions = [];
-        foreach ($rows as $row)
-        {
-            $promotions [$row['code']] =[
-                'code' => $row['code'],
-                'type' => $row['type'],
-                'value' => $row['value'],
-                'active' => $row['active'],
-            ];
-        }
-        return $promotions;
-    }
-
-    public function loadShippingZones(): array
-    {
-        $base = __DIR__;
-        $path = $base . '/../legacy/data/shipping_zones.csv';
-        $rows = DataLoader::loadData($path);
-        $zones = [];
-        foreach ($rows as $row)
-        {
-            $zones [$row['zone']] = [
-                'zone' => $row['zone'],
-                'base' => $row['base'],
-                'per_kg' => $row['per_kg'],
-            ];
-        }
-        return $zones;
-    }
+//
+//    public function loadPromotions(): array
+//    {
+//        $base = __DIR__;
+//        $path = $base . '/../legacy/data/promotions.csv';
+//        $rows = DataLoader::loadData($path);
+//        $promotions = [];
+//        foreach ($rows as $row)
+//        {
+//            $promotions [$row['code']] =[
+//                'code' => $row['code'],
+//                'type' => $row['type'],
+//                'value' => $row['value'],
+//                'active' => $row['active'],
+//            ];
+//        }
+//        return $promotions;
+//    }
+//
+//    public function loadShippingZones(): array
+//    {
+//        $base = __DIR__;
+//        $path = $base . '/../legacy/data/shipping_zones.csv';
+//        $rows = DataLoader::loadData($path);
+//        $zones = [];
+//        foreach ($rows as $row)
+//        {
+//            $zones [$row['zone']] = [
+//                'zone' => $row['zone'],
+//                'base' => $row['base'],
+//                'per_kg' => $row['per_kg'],
+//            ];
+//        }
+//        return $zones;
+//    }
 }
 
 try {
     $repo = new DataRepository();
     $customers = $repo->loadCustomers();
-    $products = $repo->loadProducts();
+   // $products = $repo->loadProducts();
     $orders = $repo->loadOrders();
-    $shippingZones = $repo->loadShippingZones();
-    $promoCodes = $repo->loadPromotions();
+   // $shippingZones = $repo->loadShippingZones();
+   // $promoCodes = $repo->loadPromotions();
 
 
-    echo "Successfully loaded " . count($customers) . " customers\n\n";
-    echo "Successfully loaded " . count($products) . "\n";
-    echo "Successfully loaded " . count($orders) . "\n";
-    echo "Successfully loaded " . count($shippingZones) . "\n";
-    echo "Successfully loaded " . count($promoCodes) . "\n";
+    //echo "Successfully loaded " . count($customers) . " customers\n\n";
+   // echo "Successfully loaded " . count($products) . "\n";
+    //echo "Successfully loaded " . count($orders) . "\n";
+   // echo "Successfully loaded " . count($shippingZones) . "\n";
+   // echo "Successfully loaded " . count($promoCodes) . "\n";
 
-    print_r($customers);
-    print_r($products);
-    print_r($orders);
-    print_r($shippingZones);
-    print_r($promoCodes);
+    //print_r($customers);
+   // print_r($products);
+    //($orders);
+    //print_r($shippingZones);
+    //print_r($promoCodes);
 
 
 } catch (\Exception $e) {
