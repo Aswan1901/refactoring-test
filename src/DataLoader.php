@@ -1,6 +1,6 @@
 <?php
 
-namespace App\DataLoader;
+namespace App;
 
 class DataLoader{
     public static function loadData($filePath): array
@@ -19,8 +19,5 @@ class DataLoader{
             fclose($handle);
         }
         return $result;
-
     }
 }
-
-
