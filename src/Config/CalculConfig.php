@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Config;
+
 //Constante utilisée pour les calculs
 final class CalculConfig
 {

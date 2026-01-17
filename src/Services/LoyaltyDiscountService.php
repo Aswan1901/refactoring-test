@@ -1,16 +1,19 @@
 <?php
 
-use App\DataRepository;
+namespace App\Services;
 
-class LoyaltyDiscountService
+use App\DataRepository;
+use App\Config\CalculConfig;
+
+final class LoyaltyDiscountService
 {
-    public function CalculateLoyaltyDiscount($order)
+    public function calculateLoyaltyDiscount(): array
     {
         $loyaltyPoints = [];
 
         $repo = new DataRepository();
-
         $orders = $repo->loadOrders();
+
         foreach ($orders as $order) {
             $cid = $order['customer_id'];
 
@@ -18,15 +21,10 @@ class LoyaltyDiscountService
                 $loyaltyPoints[$cid] = 0;
             }
 
-            //calcul sur prix commande
-            $loyaltyPoints[$cid] += $order['qty'] * $order['unit_price'] * 0.1;
-
-
+            $loyaltyPoints[$cid] +=
+                $order['quantity'] * $order['unit_price'] * CalculConfig::LOYALTY_RATIO;
         }
 
-
-
-
+        return $loyaltyPoints;
     }
-
 }

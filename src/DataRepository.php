@@ -60,6 +60,7 @@ class DataRepository
                 'customer_id' => $row['customer_id'],
                 'product_id' => $row['product_id'],
                 'unit_price' => $row['unit_price'],
+                'quantity' => $row['qty'],
                 'date' => $row['date'],
                 'promo_code' => $row['promo_code'],
                 'time' => $row['time'],
