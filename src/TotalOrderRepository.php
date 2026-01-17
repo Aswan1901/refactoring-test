@@ -2,17 +2,12 @@
 
 namespace App;
 
-require_once __DIR__ . '/../vendor/autoload.php';
-
-
 use App\DataRepository;
 
 class TotalOrderRepository
     {
         public function getTotalOrders():array
         {
-
-
 
             $repo = new DataRepository();
             //recupere les customers et orders
@@ -43,14 +38,4 @@ class TotalOrderRepository
 
             return $totalOrders;
         }
-    }
-
-    try{
-
-    $data = new TotalOrderRepository();
-    $totalOrders = $data->getTotalOrders();
-    print_r($totalOrders);
-
-    }catch(\Exception $e){
-    echo "ERROR: " . $e->getMessage() . "\n";
     }
