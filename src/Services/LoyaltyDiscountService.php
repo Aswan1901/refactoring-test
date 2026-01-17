@@ -12,7 +12,7 @@ final class LoyaltyDiscountService
         $points = 0;
 
         foreach ($orders as $order) {
-            $qty = $order['qty'] ?? 1;
+            $qty = $order['quantity'] ?? 1;
             $points += $qty * $order['unit_price'] * CalculConfig::LOYALTY_RATIO;
         }
 
