@@ -1,10 +1,6 @@
 # refactoring-test
 
 # PHP Legacy Refactoring – Order & Discount System
-
-Ce projet consiste en le **refactoring progressif d’un code PHP legacy** manipulant des commandes, remises, taxes et rapports clients.  
-L’objectif principal était de **sécuriser la logique métier**, **isoler le legacy**, et **rendre le code testable**, sans réécrire l’ensemble du système.
-
 ---
 
 ## Installation
