@@ -1,6 +1,6 @@
 <?php
 
-namespace App\services;
+namespace App\Services;
 
 
 use App\Services\VolumeDiscountService;
@@ -9,7 +9,8 @@ use App\Config\CalculConfig;
 
 final class TotalDiscountService{
 
-    public function calculateTotalDiscount(){
+    public function calculateTotalDiscount(): array
+    {
 
 
         $repoVolumeDiscount = new VolumeDiscountService();
