@@ -1,7 +1,6 @@
 # refactoring-test
 
 # PHP Legacy Refactoring – Order & Discount System
----
 
 ## Installation
 
