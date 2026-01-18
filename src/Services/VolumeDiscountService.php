@@ -45,6 +45,8 @@ final class VolumeDiscountService
                     $disc *= 1.05;
                 }
             }
+            $discounts[$customerId] = $disc;
         }
+        return $discounts;
     }
 }
