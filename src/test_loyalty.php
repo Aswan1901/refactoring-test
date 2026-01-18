@@ -5,10 +5,21 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use App\Services\LoyaltyDiscountService;
 use App\TotalOrderRepository;
+use App\Services\VolumeDiscountService;
+use App\DataRepository;
 
 $service = new LoyaltyDiscountService();
 $total = new TotalOrderRepository();
 
-print_r($service->calculateLoyaltyDiscount());
-print_r($total->getTotalOrders());
+$subTotal = new VolumeDiscountService();
+
+$customers = new DataRepository();
+
+//print_r($service->calculateLoyaltyDiscount());
+//print_r($total->getTotalOrders());
+
+print_r($subTotal->calculateVolumeDiscount());
+//print_r($customers->loadCustomers());
+//print_r($customers->loadOrders());
+
 
