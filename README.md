@@ -19,6 +19,6 @@ L’objectif principal était de **sécuriser la logique métier**, **isoler le 
 ### Installation des dépendances
 - composer install
 
-##les tests automatisés sont exécutables avec :
+## les tests automatisés sont exécutables avec :
 - ./vendor/bin/phpunit tests
 
