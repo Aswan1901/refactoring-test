@@ -20,5 +20,5 @@ L’objectif principal était de **sécuriser la logique métier**, **isoler le 
 - composer install
 
 ##les tests automatisés sont exécutables avec :
-./vendor/bin/phpunit tests
+- ./vendor/bin/phpunit tests
 
