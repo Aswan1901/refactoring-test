@@ -104,29 +104,3 @@ class DataRepository
         return $zones;
     }
 }
-
-try {
-    $repo = new DataRepository();
-    $customers = $repo->loadCustomers();
-   // $products = $repo->loadProducts();
-    $orders = $repo->loadOrders();
-   // $shippingZones = $repo->loadShippingZones();
-   // $promoCodes = $repo->loadPromotions();
-
-
-    //echo "Successfully loaded " . count($customers) . " customers\n\n";
-   // echo "Successfully loaded " . count($products) . "\n";
-    //echo "Successfully loaded " . count($orders) . "\n";
-   // echo "Successfully loaded " . count($shippingZones) . "\n";
-   // echo "Successfully loaded " . count($promoCodes) . "\n";
-
-    //print_r($customers);
-   // print_r($products);
-    //($orders);
-    //print_r($shippingZones);
-    //print_r($promoCodes);
-
-
-} catch (\Exception $e) {
-    echo "ERROR: " . $e->getMessage() . "\n";
-}
